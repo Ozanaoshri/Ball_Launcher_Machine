@@ -1,0 +1,38 @@
+int TOPLED = 6;
+int brightness = 0;
+int fadeAmount = 3;
+
+void setup() {
+
+  pinMode(TOPLED, OUTPUT);
+}
+
+void loop() {
+
+analogWrite(TOPLED, brightness);
+
+brightness = brightness + fadeAmount;
+  if(brightness == 0 || brightness == 255) {fadeAmount = -fadeAmount;}
+  
+delay(20);
+  
+  if(brightness == 0)
+ {
+digitalWrite(TOPLED, HIGH);
+ delay(500);
+digitalWrite(TOPLED, LOW);
+ delay(500);
+digitalWrite(TOPLED, HIGH);
+ delay(500);
+digitalWrite(TOPLED, LOW);
+ delay(500);
+digitalWrite(TOPLED, HIGH);
+ delay(500);
+digitalWrite(TOPLED, LOW);
+ delay(500);
+digitalWrite(TOPLED, HIGH);
+ delay(500);
+digitalWrite(TOPLED, LOW);
+ delay(500);
+ }
+}
